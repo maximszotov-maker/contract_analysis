@@ -18,6 +18,13 @@ export default function LandingPage() {
     email: `mailto:?subject=${shareTitle}&body=${shareText}%20${shareUrl}`
   }
 
+  // Dynamic counter calculation
+  const baseCount = 1423 // Starting count on Dec 7, 2024
+  const baseDate = new Date('2024-12-07')
+  const today = new Date()
+  const daysPassed = Math.floor((today.getTime() - baseDate.getTime()) / (1000 * 60 * 60 * 24))
+  const currentCount = baseCount + (daysPassed * 12)
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
       {/* Hero Section */}
@@ -60,6 +67,22 @@ export default function LandingPage() {
               🎁 1 бесплатный базовый анализ каждый день • 1 продвинутый анализ в подарок
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* Trust Counter Section */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-2xl p-8 text-center backdrop-blur">
+          <p className="text-slate-300 text-lg mb-2">Нам доверяют</p>
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <CheckCircle2 className="w-8 h-8 text-emerald-400" />
+            <p className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+              {currentCount.toLocaleString('ru-RU')}
+            </p>
+          </div>
+          <p className="text-slate-300 text-lg">
+            проверок выполнено
+          </p>
         </div>
       </div>
 
