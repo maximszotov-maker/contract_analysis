@@ -1,0 +1,19 @@
+
+services:
+  contract-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: contract-landing
+    restart: unless-stopped
+    ports:
+      - "3011:3011"
+    environment:
+      - NODE_ENV=production
+      - PORT=3011
+    networks:
+      - contract-network
+
+networks:
+  contract-network:
+    driver: bridge
