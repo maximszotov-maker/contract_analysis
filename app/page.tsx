@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { Shield, Zap, CheckCircle2, MessageCircle, Clock, Wallet, TrendingUp, UserCheck, Lock, Share2 } from 'lucide-react'
+import { Shield, Zap, CheckCircle2, MessageCircle, Clock, Wallet, TrendingUp, UserCheck, Lock, Share2, Mail } from 'lucide-react'
 
 export default function LandingPage() {
   const botLink = "https://t.me/contract_analysis_bot?start=docs_site"
@@ -15,7 +15,7 @@ export default function LandingPage() {
     telegram: `https://t.me/share/url?url=${shareUrl}&text=${shareText}`,
     whatsapp: `https://wa.me/?text=${shareText}%20${shareUrl}`,
     vk: `https://vk.com/share.php?url=${shareUrl}&title=${shareTitle}`,
-    twitter: `https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareText}`
+    email: `mailto:?subject=${shareTitle}&body=${shareText}%20${shareUrl}`
   }
 
   return (
@@ -380,17 +380,17 @@ export default function LandingPage() {
           </a>
 
           <a
-            href={shareLinks.twitter}
+            href={shareLinks.email}
             target="_blank"
             rel="noopener noreferrer"
             className="group"
           >
             <Card className="bg-white/5 border-white/10 backdrop-blur hover:bg-white/10 transition-all cursor-pointer">
               <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-sky-500/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-sky-500/20 transition-all">
-                  <Share2 className="w-6 h-6 text-sky-400" />
+                <div className="w-12 h-12 bg-rose-500/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-rose-500/20 transition-all">
+                  <Mail className="w-6 h-6 text-rose-400" />
                 </div>
-                <p className="text-white font-semibold text-sm">Twitter</p>
+                <p className="text-white font-semibold text-sm">Email</p>
               </CardContent>
             </Card>
           </a>
