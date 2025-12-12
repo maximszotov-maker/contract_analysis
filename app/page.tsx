@@ -445,12 +445,22 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="border-t border-white/10 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <p className="text-center text-slate-400 text-sm">
-            © 2024 Contract Analysis. Анализ договоров на базе ИИ • {' '}
-            <a href={botLink} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">
-              Telegram-бот
-            </a>
-          </p>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-slate-400 text-sm">
+              © 2024 Contract Analysis. Анализ договоров на базе ИИ
+            </p>
+            <div className="flex flex-col md:flex-row items-center gap-4 text-sm">
+              <a href={botLink} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">
+                Telegram-бот
+              </a>
+              <span className="hidden md:inline text-slate-600">•</span>
+              <Link href="/contacts" className="text-blue-400 hover:text-blue-300">
+                Контакты
+              </Link>
+              <span className="hidden md:inline text-slate-600">•</span>
+              <span className="text-slate-500">ИНН: 544511621163</span>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
