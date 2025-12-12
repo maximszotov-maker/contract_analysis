@@ -458,6 +458,10 @@ export default function LandingPage() {
                 Контакты
               </Link>
               <span className="hidden md:inline text-slate-600">•</span>
+              <Link href="/offer" className="text-blue-400 hover:text-blue-300">
+                Оферта
+              </Link>
+              <span className="hidden md:inline text-slate-600">•</span>
               <span className="text-slate-500">ИНН: 544511621163</span>
             </div>
           </div>
