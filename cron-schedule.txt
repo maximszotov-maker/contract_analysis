@@ -1,0 +1,26 @@
+# Cron Schedule for Contract Analysis Security Maintenance
+
+# Weekly security maintenance (every Sunday at 2 AM)
+# Checks for updates, runs security audit
+# 0 2 * * 0 cd /var/www/contract/web-app && ./maintenance.sh >> /var/log/contract-maintenance.log 2>&1
+
+# Daily backup (every day at 3 AM)
+# Creates backup and keeps last 7
+# 0 3 * * * cd /var/www/contract/web-app && ./backup.sh >> /var/log/contract-backup.log 2>&1
+
+# Daily log monitoring (every day at 1 AM)
+# Checks Docker logs for suspicious activity
+# 0 1 * * * cd /var/www/contract/web-app && ./monitor-logs.sh >> /var/log/contract-monitor.log 2>&1
+
+# To activate these cron jobs:
+# 1. Copy this content to your crontab:
+#    crontab -e
+#
+# 2. Add the lines above (uncommented)
+#
+# 3. Verify cron jobs:
+#    crontab -l
+#
+# Note: Make sure log directory exists:
+#    sudo mkdir -p /var/log && sudo touch /var/log/contract-{maintenance,backup,monitor}.log
+#    sudo chown webadmin:webadmin /var/log/contract-*.log
