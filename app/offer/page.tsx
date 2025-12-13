@@ -48,7 +48,7 @@ export default function OfferPage() {
                             </p>
                             <ul className="list-disc pl-6 space-y-2">
                                 <li><strong>Базовый анализ</strong> — 1 бесплатный анализ в день на пользователя</li>
-                                <li><strong>Продвинутый анализ</strong> — стоимость 250 рублей за 1 анализ</li>
+                                <li><strong>Продвинутый анализ</strong> — стоимость 300 рублей за 1 анализ</li>
                             </ul>
                         </section>
 

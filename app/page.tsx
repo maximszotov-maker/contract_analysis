@@ -120,7 +120,7 @@ export default function LandingPage() {
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Дёшево</h3>
               <p className="text-slate-300">
-                1 бесплатная проверка каждый день. Продвинутый анализ всего 250₽.
+                1 бесплатная проверка каждый день. Продвинутый анализ всего 300₽.
               </p>
             </CardContent>
           </Card>
@@ -308,7 +308,7 @@ export default function LandingPage() {
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">Продвинутый</h3>
               <div className="mb-6">
-                <span className="text-4xl font-bold text-white">250₽</span>
+                <span className="text-4xl font-bold text-white">300₽</span>
                 <span className="text-slate-300"> / анализ</span>
               </div>
               <ul className="space-y-3 mb-8">
