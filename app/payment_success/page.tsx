@@ -1,10 +1,34 @@
+'use client'
+
+import { useEffect } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { CheckCircle2, MessageCircle } from 'lucide-react'
 
 export default function PaymentSuccessPage() {
-    const botLink = "https://t.me/contract_analysis_bot?start=payment_success"
+    const botLink = "https://t.me/contract_analysis_bot"
+
+    useEffect(() => {
+        // Auto-redirect to Telegram after 2 seconds
+        const timer = setTimeout(() => {
+            window.location.href = botLink
+            // Try to close the window after redirect (works if opened by window.open)
+            setTimeout(() => {
+                window.close()
+            }, 500)
+        }, 2000)
+
+        return () => clearTimeout(timer)
+    }, [])
+
+    const handleClick = () => {
+        window.location.href = botLink
+        // Try to close the window
+        setTimeout(() => {
+            window.close()
+        }, 500)
+    }
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center p-4">
@@ -18,16 +42,22 @@ export default function PaymentSuccessPage() {
                         Оплата прошла успешно!
                     </h1>
 
-                    <p className="text-slate-300 text-lg mb-8">
-                        Спасибо за покупку продвинутого анализа. Вернитесь в Telegram и загрузите документ для проверки.
+                    <p className="text-slate-300 text-lg mb-4">
+                        Спасибо за покупку продвинутого анализа.
                     </p>
 
-                    <a href={botLink} target="_blank" rel="noopener noreferrer">
-                        <Button size="lg" className="text-lg px-8 h-14 bg-emerald-600 hover:bg-emerald-700 w-full">
-                            <MessageCircle className="w-5 h-5 mr-2" />
-                            Вернуться в Telegram
-                        </Button>
-                    </a>
+                    <p className="text-slate-400 mb-8">
+                        Переход в Telegram через <span className="text-emerald-400 font-semibold">2 секунды</span>...
+                    </p>
+
+                    <Button
+                        onClick={handleClick}
+                        size="lg"
+                        className="text-lg px-8 h-14 bg-emerald-600 hover:bg-emerald-700 w-full"
+                    >
+                        <MessageCircle className="w-5 h-5 mr-2" />
+                        Перейти в Telegram сейчас
+                    </Button>
 
                     <p className="text-slate-400 text-sm mt-6">
                         Продвинутый анализ готов к использованию
